@@ -17,7 +17,7 @@
       margin: 20px; 
       background-color: #000;
       color: #fff;
-      font-size: 16px; /* 기본 PC용 크기 */
+      font-size: 18px; /* PC 본문 크기 (기존 16px → 18px) */
     }
     section { margin-bottom: 25px; }
     h1 { color: #f0f0f0; font-size: 32px; }
@@ -51,15 +51,14 @@
     p { margin: 6px 0; font-weight: bold; }
     .golf-block { margin-top: 20px; }
 
-/* 모바일 화면에서만 확대 적용 */
-@media (max-width: 1024px) {
-  body { font-size: 10px; }   /* 지금 20px → 절반인 10px */
-  h1 { font-size: 20px; }     /* 지금 40px → 절반인 20px */
-  h2 { font-size: 14px; }     /* 지금 28px → 절반인 14px */
-  h3 { font-size: 12px; }     /* 지금 24px → 절반인 12px */
-  .images img { max-width: 172px; } /* 지금 345px → 절반인 172px */
-}
-
+    /* 모바일 화면에서만 적용 */
+    @media (max-width: 1024px) {
+      body { font-size: 12px; }   /* 본문 */
+      h1 { font-size: 22px; }     /* 대제목 */
+      h2 { font-size: 16px; }     /* 섹션 제목 */
+      h3 { font-size: 14px; }     /* 하위 제목 */
+      .images img { max-width: 172px; } /* 이미지 크기 축소 */
+    }
   </style>
 </head>
 <body>
@@ -112,37 +111,49 @@
     </div>
   </section>
 
-  <!-- 골프장 -->
-  <section>
-    <h2>⛳ 골프장 
-      <a href="https://www.monkeytravel.com/vn/ko/golf/golf/halong-haiphong/product/product_list.php?checkInDate=2026-12-09" target="_blank">[관련 사이트]</a>
-    </h2>
-    <div class="info">
-      <div class="golf-block">
-        <p>FLC 하롱 골프 클럽 (FLC Ha Long Golf Club): 159,497원 (2인 1카트 4인 기준, 1인 비용) / 호텔 ↔ 11km (20분)</p>
-        <div class="images">
-          <img src="images/flc-golf.jpg" alt="FLC 골프장">
-          <img src="images/flc-map.jpg" alt="호텔-FLC 지도">
-        </div>
-      </div>
+ <section>
+  <h2>골프장 <a href="관련사이트URL1">[관련 사이트]</a></h2>
+  <div class="info">
+    <p>일정 : 12월 9일(수)</p>
+    <p>장소 : FLC 하롱 골프 클럽 (FLC Ha Long Golf Club)</p>
+    <p>금액 : 159,497원 (2인 1카트 4인 기준, 1인 비용)</p>
+    <p>이동 시간 : 20분 소요 / 숙소 <-> 11Km</p>
+  </div>
+  <div class="images">
+    <img src="images/golf-price1.jpg" alt="골프장 금액">
+    <img src="images/golf-map1.jpg" alt="구글 지도">
+  </div>
+</section>
 
-      <div class="golf-block">
-        <p>루비 트리 골프 리조트 (Ruby Tree Golf Resort): 162,450원 (2인 1카트 4인 기준, 1인 비용) / 호텔 ↔ 55km (55분)</p>
-        <div class="images">
-          <img src="images/ruby-golf.jpg" alt="루비 트리 골프장">
-          <img src="images/ruby-map.jpg" alt="호텔-루비 지도">
-        </div>
-      </div>
+<section>
+  <h2>골프장 <a href="관련사이트URL2">[관련 사이트]</a></h2>
+  <div class="info">
+    <p>일정 : 12월 10일(수)</p>
+    <p>장소 : 루비 트리 골프 리조트 (Ruby Tree Golf Resort)</p>
+    <p>금액 : 162,450원 (2인 1카트 4인 기준, 1인 비용)</p>
+    <p>이동 시간 : 55분 소요 / 숙소 <-> 55Km</p>
+  </div>
+  <div class="images">
+    <img src="images/golf-price2.jpg" alt="골프장 금액">
+    <img src="images/golf-map2.jpg" alt="구글 지도">
+  </div>
+</section>
 
-      <div class="golf-block">
-        <p>투안쩌우 골프 리조트 (Tuan Chau Golf Resort): 141,775원 (2인 1카트 4인 기준, 1인 비용) / 호텔 ↔ 11km (15분)</p>
-        <div class="images">
-          <img src="images/tuan-golf.jpg" alt="투안쩌우 골프장">
-          <img src="images/tuan-map.jpg" alt="호텔-투안쩌우 지도">
-        </div>
-      </div>
-    </div>
-  </section>
+<section>
+  <h2>골프장 <a href="관련사이트URL3">[관련 사이트]</a></h2>
+  <div class="info">
+    <p>일정 : 12월 11일(목)</p>
+    <p>장소 : 투안쩌우 골프 리조트 (Tuan Chau Golf Resort)</p>
+    <p>금액 : 141,775원 (2인 1카트 4인 기준, 1인 비용)</p>
+    <p>이동 시간 : 15분 소요 / 숙소 <-> 11Km</p>
+  </div>
+  <div class="images">
+    <img src="images/golf-price3.jpg" alt="골프장 금액">
+    <img src="images/golf-map3.jpg" alt="구글 지도">
+  </div>
+</section>
+
+<p>※ 골프장과 일정은 변경될 수 있음</p>
 
   <!-- 차량 -->
   <section>
