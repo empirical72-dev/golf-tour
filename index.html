@@ -51,14 +51,15 @@
     p { margin: 6px 0; font-weight: bold; }
     .golf-block { margin-top: 20px; }
 
-    /* 모바일 화면에서만 확대 적용 */
-    @media (max-width: 1024px) {
-      body { font-size: 24px; }   /* 글자 50% 확대 (16px → 24px) */
-      h1 { font-size: 48px; }     /* 32px → 48px */
-      h2 { font-size: 36px; }     /* 24px → 36px */
-      h3 { font-size: 30px; }     /* 20px → 30px */
-      .images img { max-width: 390px; } /* 이미지 30% 확대 (300px → 390px) */
-    }
+/* 모바일 화면에서만 확대 적용 */
+@media (max-width: 1024px) {
+  body { font-size: 20px; }   /* 기존 16px → 중간값 20px (약 25% 확대) */
+  h1 { font-size: 40px; }     /* 기존 32px → 중간값 40px */
+  h2 { font-size: 28px; }     /* 기존 24px → 중간값 28px */
+  h3 { font-size: 24px; }     /* 기존 20px → 중간값 24px */
+  .images img { max-width: 345px; } /* 기존 300px → 중간값 345px (약 15% 확대) */
+}
+
   </style>
 </head>
 <body>
