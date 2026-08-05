@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>베트남 골프 투어 일정</title>
-  <!-- 카톡 공유 시 대표 이미지 지정 (투안쩌우 골프 리조트) -->
+  <!-- 카톡 공유 시 대표 이미지 지정 -->
   <meta property="og:image" content="https://empirical72-dev.github.io/golf-tour/images/golf-image.jpg">
   <meta property="og:title" content="베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)">
   <meta property="og:description" content="항공권, 숙소, 골프장, 차량까지 정리된 베트남 골프 투어 일정표">
@@ -15,17 +15,18 @@
       margin: 20px; 
       background-color: #000;
       color: #fff;
+      font-size: 1em; /* 기본 PC용 크기 */
     }
     section { margin-bottom: 25px; }
-    h1 { color: #f0f0f0; }
-    h2 { color: #ffd700; }
-    h3 { color: #ffa500; }
+    h1 { color: #f0f0f0; font-size: 2em; }
+    h2 { color: #ffd700; font-size: 1.5em; }
+    h3 { color: #ffa500; font-size: 1.2em; }
     a { color: #00bfff; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .info { margin-left: 20px; }
     .images { position: relative; }
     .images img { 
-      max-width: 300px; 
+      max-width: 300px; /* 기본 PC용 크기 */
       height: auto; 
       margin: 30px 10px 20px 10px; 
       display: inline-block; 
@@ -39,7 +40,7 @@
       left: 10px;
       background: rgba(255,255,255,0.9);
       padding: 5px 10px;
-      font-size: 12px;
+      font-size: 0.8em;
       font-weight: bold;
       color: #000;
       border: 1px solid #ccc;
@@ -47,6 +48,15 @@
     }
     p { margin: 6px 0; font-weight: bold; }
     .golf-block { margin-top: 20px; }
+
+    /* 모바일 화면에서만 확대 적용 */
+    @media (max-width: 768px) {
+      body { font-size: 1.5em; }   /* 글자 50% 확대 */
+      h1 { font-size: 3em; }
+      h2 { font-size: 2.25em; }
+      h3 { font-size: 1.8em; }
+      .images img { max-width: 390px; } /* 이미지 30% 확대 */
+    }
   </style>
 </head>
 <body>
