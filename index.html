@@ -108,7 +108,8 @@ hr {
   font-weight: 500;
   padding-left: 1.5em;
 }
-.cost p::before { content: none; } /* 점 표시 제거 */
+.cost p::before { content: none; } /* 기본 점 표시 제거 */
+.cost p:first-child::before { content: "• "; color: #ffd700; } /* 총 비용만 황금색 점 표시 */
 .cost p.notice {
   margin-top: 10px;
   margin-bottom: 40px; /* 아래 간격 40px */
@@ -116,6 +117,7 @@ hr {
   font-weight: bold;
   padding-left: 0;
 }
+.cost p.notice::before { content: none; }
 </style>
 </head>
 <body>
