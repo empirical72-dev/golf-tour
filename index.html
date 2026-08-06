@@ -36,10 +36,15 @@
       border: 1px solid #555;
       border-radius: 4px;
     }
-/* 모바일 화면에서만 적용 */
+/* 모바일 전용 */
 @media (max-width: 1024px) {
-  .images img { 
-    max-width: 48%;   /* 모바일에서 한 줄에 2개씩 보이도록 크기 줄임 */
+  .images {
+    display: flex;
+    flex-wrap: wrap;        /* 여러 줄 허용 */
+    justify-content: center; /* 가운데 정렬 */
+  }
+  .images img {
+    max-width: 48%;         /* 한 줄에 2개씩 들어가도록 크기 조정 */
     margin: 5px;
   }
 }
