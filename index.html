@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>베트남 골프 투어 일정</title>
-  <!-- 카톡 공유 시 대표 이미지 지정 -->
   <meta property="og:image" content="https://empirical72-dev.github.io/golf-tour/images/golf-image.jpg">
   <meta property="og:title" content="베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)">
   <meta property="og:description" content="항공권, 숙소, 골프장, 차량까지 정리된 베트남 골프 투어 일정표">
-  <!-- 모바일 확대 적용을 위한 뷰포트 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -17,18 +15,29 @@
       margin: 20px; 
       background-color: #000;
       color: #fff;
-      font-size: 18px; /* PC 본문 크기 (기존 16px → 18px) */
+      font-size: 18px;
     }
-    section { margin-bottom: 25px; }
     h1 { color: #f0f0f0; font-size: 32px; }
     h2 { color: #ffd700; font-size: 24px; }
     h3 { color: #ffa500; font-size: 20px; }
     a { color: #00bfff; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    p { margin: 6px 0; font-weight: bold; }
+
+    /* 항목별 박스 */
+    .info-block {
+      border: 2px solid #666;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      background-color: rgba(255,255,255,0.03);
+    }
+
     .info { margin-left: 20px; }
+
     .images { position: relative; }
     .images img { 
-      max-width: 300px; /* 기본 PC용 크기 */
+      max-width: 300px; 
       height: auto; 
       margin: 30px 10px 20px 10px; 
       display: inline-block; 
@@ -36,40 +45,30 @@
       border: 1px solid #555;
       border-radius: 4px;
     }
-/* 모바일 전용 */
-@media (max-width: 1024px) {
-  .images {
-    display: flex;
-    flex-wrap: wrap;        /* 여러 줄 허용 */
-    justify-content: center; /* 가운데 정렬 */
-  }
-  .images img {
-    max-width: 48%;         /* 한 줄에 2개씩 들어가도록 크기 조정 */
-    margin: 5px;
-  }
-}
-    .note {
-      position: absolute;
-      top: 0;
-      left: 10px;
-      background: rgba(255,255,255,0.9);
-      padding: 5px 10px;
-      font-size: 12px;
-      font-weight: bold;
-      color: #000;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    p { margin: 6px 0; font-weight: bold; }
-    .golf-block { margin-top: 20px; }
 
-    /* 모바일 화면에서만 적용 */
+    .notice {
+      font-size: 14px;
+      color: #ff8080;
+      margin: 5px 0 15px 20px;
+      font-weight: bold;
+    }
+
+    /* 모바일 전용 */
     @media (max-width: 1024px) {
-      body { font-size: 12px; }   /* 본문 */
-      h1 { font-size: 22px; }     /* 대제목 */
-      h2 { font-size: 16px; }     /* 섹션 제목 */
-      h3 { font-size: 14px; }     /* 하위 제목 */
-      .images img { max-width: 172px; } /* 이미지 크기 축소 */
+      body { font-size: 12px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 16px; }
+      h3 { font-size: 14px; }
+
+      .images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* 항상 왼쪽 정렬 */
+      }
+      .images img { 
+        max-width: 48%; /* 한 줄에 2개 가능 */
+        margin: 5px;
+      }
     }
   </style>
 </head>
@@ -77,25 +76,24 @@
   <h1>베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)</h1>
 
   <!-- 항공권 -->
-  <!-- 항공권 -->
-<section>
-  <h2>✈️ 항공권 
-    <a href="https://kr.trip.com/flights/ShowFareNext?..." target="_blank">[관련 사이트]</a>
-  </h2>
-  <div class="info">
-    <p>항공사: VietJet Air</p>
-    <p>노선: 인천(ICN) ↔ 하이퐁(HPH)</p>
-    <p>출발: 12월 8일(화) 07:15 인천 → 12월 8일(화) 10:40 하이퐁</p>
-    <p>도착: 12월 12일(토) 23:45 하이퐁 → 12월 13일(일) 06:00 인천</p>
-    <p>금액: 550,500원 (트레블버킷 기준)</p>
-    <div class="images">
-      <img src="images/flight-ticket.jpg" alt="항공권 예약 화면">
+  <section class="info-block">
+    <h2>✈️ 항공권 
+      <a href="https://kr.trip.com/flights/ShowFareNext?..." target="_blank">[관련 사이트]</a>
+    </h2>
+    <div class="info">
+      <p>항공사: VietJet Air</p>
+      <p>노선: 인천(ICN) ↔ 하이퐁(HPH)</p>
+      <p>출발: 12월 8일(화) 07:15 인천 → 12월 8일(화) 10:40 하이퐁</p>
+      <p>도착: 12월 12일(토) 23:45 하이퐁 → 12월 13일(일) 06:00 인천</p>
+      <p>금액: 550,500원 (트레블버킷 기준)</p>
+      <div class="images">
+        <img src="images/flight-ticket.jpg" alt="항공권 예약 화면">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- 숙소 -->
-  <section>
+  <section class="info-block">
     <h2>🏨 숙소 
       <a href="https://www.monkeytravel.com/vn/ko/hotel/halong/product/product_detail.php?product_id=1076762390" target="_blank">[관련 사이트]</a>
     </h2>
@@ -111,92 +109,62 @@
         <img src="images/hotel-map.jpg" alt="공항-호텔 지도">
       </div>
     </div>
-
-    <div class="info">
-      <h3>🎰 로얄 하롱 호텔 카지노 (Royal Gaming Club)</h3>
-      <p>위치: 지상층 (1층~2층 구역, 메인 로비와 연결)</p>
-      <p>출입 대상: 외국인 전용 (실물 여권 지참 필수)</p>
-      <p>운영 시간: 24시간, 연중무휴</p>
-      <p>규모 및 게임 구성: 테이블 게임 약 15대 (바카라, 블랙잭, 식보 등), 전자 게임기 약 70대 (슬롯머신 등)</p>
-      <p>배팅 한도 (USD 기준): 슬롯머신 최소 $0.025 ~ $1.00 / 테이블 게임 최소 $1 ~ $20 / 최대 약 $20,000</p>
-      <p>시설 특성: 대형 리조트 대비 소규모, 연식 있는 시설. 낮은 최소 배팅 금액으로 소액 위주의 플레이에 적합</p>
-    </div>
   </section>
 
- <section>
-  <h2>골프장 <a href="관련사이트URL1">[관련 사이트]</a></h2>
-  <div class="info">
-    <p>일정 : 12월 9일(수)</p>
-    <p>장소 : FLC 하롱 골프 클럽 (FLC Ha Long Golf Club)</p>
-    <p>금액 : 159,497원 (2인 1카트 4인 기준, 1인 비용)</p>
-    <p>이동 시간 : 20분 소요 / 숙소 <-> 11Km</p>
-  </div>
-  <div class="images">
-    <img src="images/golf-price1.jpg" alt="골프장 금액">
-    <img src="images/golf-map1.jpg" alt="구글 지도">
-  </div>
-</section>
+  <!-- 골프장 -->
+  <section class="info-block">
+    <h2>⛳ 골프장 <a href="관련사이트URL1">[관련 사이트]</a></h2>
+    <p class="notice">※ 골프장과 일정은 변경될 수 있음</p>
 
-<section>
-  <h2>골프장 <a href="관련사이트URL1">[관련 사이트]</a></h2>
-  <div class="info">
-    <p>일정 : 12월 9일(수)</p>
-    <p>장소 : FLC 하롱 골프 클럽 (FLC Ha Long Golf Club)</p>
-    <p>금액 : 159,497원 (2인 1카트 4인 기준, 1인 비용)</p>
-    <p>이동 시간 : 20분 소요 / 숙소 <-> 11Km</p>
-  </div>
-  <div class="images">
-    <img src="images/flc-golf.jpg" alt="FLC 하롱 골프 클럽 금액">
-    <img src="images/flc-map.jpg" alt="FLC 하롱 골프 클럽 구글 지도">
-  </div>
-</section>
-
-<section>
-  <h2>골프장 <a href="관련사이트URL2">[관련 사이트]</a></h2>
-  <div class="info">
-    <p>일정 : 12월 10일(수)</p>
-    <p>장소 : 루비 트리 골프 리조트 (Ruby Tree Golf Resort)</p>
-    <p>금액 : 162,450원 (2인 1카트 4인 기준, 1인 비용)</p>
-    <p>이동 시간 : 55분 소요 / 숙소 <-> 55Km</p>
-  </div>
-  <div class="images">
-    <img src="images/ruby-golf.jpg" alt="루비 트리 골프 리조트 금액">
-    <img src="images/ruby-map.jpg" alt="루비 트리 골프 리조트 구글 지도">
-  </div>
-</section>
-
-<section>
-  <h2>골프장 <a href="관련사이트URL3">[관련 사이트]</a></h2>
-  <div class="info">
-    <p>일정 : 12월 11일(목)</p>
-    <p>장소 : 투안쩌우 골프 리조트 (Tuan Chau Golf Resort)</p>
-    <p>금액 : 141,775원 (2인 1카트 4인 기준, 1인 비용)</p>
-    <p>이동 시간 : 15분 소요 / 숙소 <-> 11Km</p>
-  </div>
-  <div class="images">
-    <img src="images/tuan-golf.jpg" alt="투안쩌우 골프 리조트 금액">
-    <img src="images/tuan-map.jpg" alt="투안쩌우 골프 리조트 구글 지도">
-  </div>
-</section>
-
-<p>※ 골프장과 일정은 변경될 수 있음</p>
-
-  <!-- 차량 -->
-  <section>
-    <h2>🚗 차량 
-      <a href="https://www.monkeytravel.com/vn/ko/car/product/product_car_detail.php" target="_blank">[관련 사이트]</a>
-    </h2>
     <div class="info">
-      <p>차량 종류: SUV (6인 탑승 가능, 짐 있을 경우 4석 사용)</p>
-      <p>금액: 공항 ↔ 숙소 픽업 72,896원 / 샌딩 72,896원</p>
-      <p>숙소 ↔ 골프장: 왕복 72,896원 (루비 트리 예시)</p>
+      <p>일정 : 12월 9일(수)</p>
+      <p>장소 : FLC 하롱 골프 클럽 (FLC Ha Long Golf Club)</p>
+      <p>금액 : 159,497원 (2인 1카트 4인 기준, 1인 비용)</p>
+      <p>이동 시간 : 20분 소요 / 숙소 <-> 11Km</p>
       <div class="images">
-        <img src="images/airport-pickup.jpg" alt="공항 픽업">
-        <img src="images/airport-sending.jpg" alt="공항 샌딩">
-        <img src="images/golf-roundtrip.jpg" alt="골프장 왕복">
+        <img src="images/flc-golf.jpg" alt="FLC 하롱 골프 클럽 금액">
+        <img src="images/flc-map.jpg" alt="FLC 하롱 골프 클럽 구글 지도">
+      </div>
+    </div>
+
+    <div class="info">
+      <p>일정 : 12월 10일(목)</p>
+      <p>장소 : 루비 트리 골프 리조트 (Ruby Tree Golf Resort)</p>
+      <p>금액 : 162,450원 (2인 1카트 4인 기준, 1인 비용)</p>
+      <p>이동 시간 : 55분 소요 / 숙소 <-> 55Km</p>
+      <div class="images">
+        <img src="images/ruby-golf.jpg" alt="루비 트리 골프 리조트 금액">
+        <img src="images/ruby-map.jpg" alt="루비 트리 골프 리조트 구글 지도">
+      </div>
+    </div>
+
+    <div class="info">
+      <p>일정 : 12월 11일(목)</p>
+      <p>장소 : 투안쩌우 골프 리조트 (Tuan Chau Golf Resort)</p>
+      <p>금액 : 141,775원 (2인 1카트 4인 기준, 1인 비용)</p>
+      <p>이동 시간 : 15분 소요 / 숙소 <-> 11Km</p>
+      <div class="images">
+        <img src="images/tuan-golf.jpg" alt="투안쩌우 골프 리조트 금액">
+        <img src="images/tuan-map.jpg" alt="투안쩌우 골프 리조트 구글 지도">
       </div>
     </div>
   </section>
 
+  <!-- 차량 -->
+<section class="info-block">
+  <h2>🚗 차량 
+    <a href="https://www.monkeytravel.com/vn/ko/car/product/product_car_detail.php" target="_blank">[관련 사이트]</a>
+  </h2>
+  <div class="info">
+    <p>차량 종류: SUV (6인 탑승 가능, 짐 있을 경우 4석 사용)</p>
+    <p>금액: 공항 ↔ 숙소 픽업 66,220원 / 샌딩 72,896원</p>
+    <p>숙소 ↔ 골프장: 왕복 86,305원 (루비 트리 예시)</p>
+    <div class="images">
+      <img src="images/airport-pickup.jpg" alt="공항 픽업">
+      <img src="images/airport-sending.jpg" alt="공항 샌딩">
+      <img src="images/golf-roundtrip.jpg" alt="골프장 왕복">
+    </div>
+  </div>
+</section>
 </body>
 </html>
