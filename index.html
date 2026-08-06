@@ -8,102 +8,88 @@
   <meta property="og:description" content="항공권, 숙소, 카지노, 골프장, 차량까지 정리된 베트남 골프 투어 일정표">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body { 
-    font-family: Arial, sans-serif; 
-    line-height: 1.4; 
-    margin: 20px; 
-    background-color: #000;
-    color: #fff;
-    font-size: 18px;
-  }
-  h1 { color: #f0f0f0; font-size: 32px; }
-  h2 { color: #ffd700; font-size: 24px; margin-top: 30px; }
-  h3 { color: #ffa500; font-size: 20px; margin-top: 20px; }
-  a { color: #00bfff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  p { 
-    margin: 6px 0; 
-    font-weight: bold; 
-    padding-left: 2em; 
-  }
-  p::before { 
-    content: "• "; 
-    color: #ffd700;
-  }
-  p.notice { 
-    margin-top: 6px;      
-    margin-bottom: 20px;  
-    color: #ff6347; 
-    font-weight: bold;
-    padding-left: 0;      
-  }
-  p.notice::before { 
-    content: none; 
-  }
-  .golf-name { 
-    font-size: 18px;   
-    color: #00bfff; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
-    padding-left: 2em; 
-  }
-  .info { 
-    margin-bottom: 30px;  /* PC 버전 간격 */
-  }
-  .images { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: flex-start; 
-    margin-top: 20px; 
-    gap: 10px;        
-  }
-  .images img { 
-    flex: 0 0 25%;   /* PC 전체 화면: 크기 줄여서 3개 */
-    max-width: 25%;
-    height: auto; 
-    border: 1px solid #555; 
-    border-radius: 4px; 
-  }
-  hr { 
-    border: 0; 
-    border-top: 2px solid #666; 
-    margin: 30px 0; /* PC 버전 간격 */
-  }
+/* 기본 스타일 */
+body { 
+  font-family: 'Noto Sans KR', 'Roboto', system-ui, sans-serif;
+  line-height: 1.6; 
+  margin: 24px; 
+  background-color: #111;
+  color: #f5f5f5;
+  font-size: 16px;
+}
 
-  /* PC 창 줄임: 1200px 이하 → 2개 */
-  @media (max-width: 1200px) {
-    .images img {
-      flex: 0 0 45%;  
-      max-width: 45%;
-    }
-  }
+/* 제목 스타일 */
+h1 { color: #ffd700; font-size: 28px; font-weight: 700; }
+h2 { color: #ffae42; font-size: 22px; margin-top: 28px; }
+h3 { color: #87cefa; font-size: 18px; margin-top: 20px; }
 
-  /* PC 창 더 줄임: 600px 이하 → 1개 */
-  @media (max-width: 600px) {
-    .images img {
-      flex: 0 0 100%; 
-      max-width: 100%;
-    }
-  }
+/* 링크 */
+a { color: #00bfff; text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: #ffd700; text-decoration: underline; }
 
-  /* 모바일 전용 (원래 원칙 그대로 유지) */
-  @media (max-width: 1024px) {
-    body { font-size: 12px; }
-    h1 { font-size: 22px; }
-    h2 { font-size: 16px; }
-    h3 { font-size: 14px; }
-    .images { gap: 6px; }
-    .golf-name { 
-      font-size: 12px;   
-      padding-left: 1em; 
-    }
-    hr { 
-      margin: 20px 0; /* 모바일에서 가로줄 간격 줄임 */
-    }
-    .info { 
-      margin-bottom: 20px; /* 모바일에서 골프장 항목 간격 줄임 */
-    }
-  }
+/* 문단 */
+p { margin: 8px 0; font-weight: 500; padding-left: 1.5em; }
+p::before { content: "• "; color: #ffd700; }
+
+/* 강조 문구 */
+p.notice { 
+  margin: 10px 0 20px; 
+  color: #ff6347; 
+  font-weight: bold;
+  padding-left: 0; 
+}
+p.notice::before { content: none; }
+
+/* 골프장 이름 */
+.golf-name { 
+  font-size: 16px;   
+  color: #00bfff; 
+  font-weight: 600; 
+  margin-bottom: 12px; 
+  padding-left: 1.5em; 
+}
+
+/* 구분선 */
+hr { 
+  border: none; 
+  height: 1px; 
+  background: linear-gradient(to right, #333, #666, #333);
+  margin: 36px 0;
+}
+
+/* 이미지 레이아웃 */
+.images { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  margin-top: 20px; 
+  gap: 12px;        
+}
+.images img { 
+  flex: 0 0 25%;   
+  max-width: 25%;
+  height: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+.images img:hover {
+  transform: scale(1.03);
+}
+
+/* 모바일 전용 (원래 원칙 그대로 유지) */
+@media (max-width: 1024px) {
+  body { font-size: 12px; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 14px; }
+  .images { gap: 6px; }
+  .golf-name { font-size: 12px; padding-left: 1em; }
+  hr { margin: 20px 0; }
+  .info { margin-bottom: 20px; }
+}
+
+/* 모바일에서 이미지 2+1 구조 유지 */
 @media (max-width: 600px) {
   .images img {
     flex: 0 0 48%;   /* 절반 크기 → 한 줄에 2개 */
