@@ -21,22 +21,34 @@
     h3 { color: #ffa500; font-size: 20px; margin-top: 20px; }
     a { color: #00bfff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    p { margin: 6px 0; font-weight: bold; text-indent: 2em; } /* 들여쓰기 */
+    p { 
+      margin: 6px 0; 
+      font-weight: bold; 
+      padding-left: 2em; /* 모든 줄 동일 들여쓰기 */
+    }
+    p::before { 
+      content: "• "; /* 점 표시 */
+      color: #ffd700;
+    }
     .images { 
       display: flex; 
       flex-wrap: wrap; 
       justify-content: flex-start; 
-      margin-top: 10px; /* 내용과 이미지 간격 */
-      gap: 10px; /* 이미지 간격 */
+      margin-top: 20px; /* 내용과 이미지 간격 넓힘 */
+      gap: 10px;        /* 이미지 간격 */
     }
     .images img { 
       flex: 0 0 32%; 
-      max-width: 70%; /* PC 버전 크기 축소 */
+      max-width: 60%; /* PC 버전 크기 축소 */
       height: auto; 
       border: 1px solid #555; 
       border-radius: 4px; 
     }
-    hr { border: 0; border-top: 2px solid #666; margin: 20px 0; }
+    hr { 
+      border: 0; 
+      border-top: 2px solid #666; 
+      margin: 40px 0; /* 항목 구분 간격 넓힘 */
+    }
     @media (max-width: 1024px) {
       body { font-size: 12px; }
       h1 { font-size: 22px; }
@@ -45,10 +57,12 @@
       .images { gap: 6px; }
       .images img { 
         flex: 0 0 48%; 
-        max-width: 48%; 
+        max-width: 48%; /* 모바일 한 줄에 2개 */
       }
-      /* 이미지가 3개일 경우 → 2개 + 1개 배열 */
-      .images img:nth-child(3) { flex: 0 0 100%; max-width: 100%; }
+      .images img:nth-child(3) { 
+        flex: 0 0 48%; 
+        max-width: 48%; /* 3번째도 동일 크기 */
+      }
     }
   </style>
 </head>
