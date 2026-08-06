@@ -36,6 +36,13 @@
       border: 1px solid #555;
       border-radius: 4px;
     }
+/* 모바일 화면에서만 적용 */
+@media (max-width: 1024px) {
+  .images img { 
+    max-width: 48%;   /* 모바일에서 한 줄에 2개씩 보이도록 크기 줄임 */
+    margin: 5px;
+  }
+}
     .note {
       position: absolute;
       top: 0;
@@ -65,22 +72,22 @@
   <h1>베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)</h1>
 
   <!-- 항공권 -->
-  <section>
-    <h2>✈️ 항공권 
-      <a href="https://kr.trip.com/flights/ShowFareNext?..." target="_blank">[관련 사이트]</a>
-    </h2>
-    <div class="info">
-      <p>항공사: VietJet Air</p>
-      <p>노선: 인천(ICN) ↔ 하이퐁(HPH)</p>
-      <p>출발: 12월 8일(화) 07:15 인천 → 12월 8일(화) 10:40 하이퐁</p>
-      <p>도착: 12월 12일(토) 23:45 하이퐁 → 12월 13일(일) 06:00 인천</p>
-      <p>금액: 550,500원</p>
-      <div class="images">
-        <span class="note">* 트래블버킷 기준</span>
-        <img src="images/flight-ticket.jpg" alt="항공권 예약 화면">
-      </div>
+  <!-- 항공권 -->
+<section>
+  <h2>✈️ 항공권 
+    <a href="https://kr.trip.com/flights/ShowFareNext?..." target="_blank">[관련 사이트]</a>
+  </h2>
+  <div class="info">
+    <p>항공사: VietJet Air</p>
+    <p>노선: 인천(ICN) ↔ 하이퐁(HPH)</p>
+    <p>출발: 12월 8일(화) 07:15 인천 → 12월 8일(화) 10:40 하이퐁</p>
+    <p>도착: 12월 12일(토) 23:45 하이퐁 → 12월 13일(일) 06:00 인천</p>
+    <p>금액: 550,500원 (트레블버킷 기준)</p>
+    <div class="images">
+      <img src="images/flight-ticket.jpg" alt="항공권 예약 화면">
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 숙소 -->
   <section>
@@ -126,6 +133,20 @@
 </section>
 
 <section>
+  <h2>골프장 <a href="관련사이트URL1">[관련 사이트]</a></h2>
+  <div class="info">
+    <p>일정 : 12월 9일(수)</p>
+    <p>장소 : FLC 하롱 골프 클럽 (FLC Ha Long Golf Club)</p>
+    <p>금액 : 159,497원 (2인 1카트 4인 기준, 1인 비용)</p>
+    <p>이동 시간 : 20분 소요 / 숙소 <-> 11Km</p>
+  </div>
+  <div class="images">
+    <img src="images/flc-golf.jpg" alt="FLC 하롱 골프 클럽 금액">
+    <img src="images/flc-map.jpg" alt="FLC 하롱 골프 클럽 구글 지도">
+  </div>
+</section>
+
+<section>
   <h2>골프장 <a href="관련사이트URL2">[관련 사이트]</a></h2>
   <div class="info">
     <p>일정 : 12월 10일(수)</p>
@@ -134,8 +155,8 @@
     <p>이동 시간 : 55분 소요 / 숙소 <-> 55Km</p>
   </div>
   <div class="images">
-    <img src="images/golf-price2.jpg" alt="골프장 금액">
-    <img src="images/golf-map2.jpg" alt="구글 지도">
+    <img src="images/ruby-golf.jpg" alt="루비 트리 골프 리조트 금액">
+    <img src="images/ruby-map.jpg" alt="루비 트리 골프 리조트 구글 지도">
   </div>
 </section>
 
@@ -148,8 +169,8 @@
     <p>이동 시간 : 15분 소요 / 숙소 <-> 11Km</p>
   </div>
   <div class="images">
-    <img src="images/golf-price3.jpg" alt="골프장 금액">
-    <img src="images/golf-map3.jpg" alt="구글 지도">
+    <img src="images/tuan-golf.jpg" alt="투안쩌우 골프 리조트 금액">
+    <img src="images/tuan-map.jpg" alt="투안쩌우 골프 리조트 구글 지도">
   </div>
 </section>
 
