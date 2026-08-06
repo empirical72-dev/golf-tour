@@ -37,12 +37,15 @@
     font-weight: bold;
     padding-left: 0;      
   }
+  p.notice::before { 
+    content: none; /* 점 표시 제거 */
+  }
   .golf-name { 
-    font-size: 18px; 
+    font-size: 18px;   /* 본문과 동일 */
     color: #00bfff; 
     font-weight: bold; 
     margin-bottom: 10px; 
-    padding-left: 2em;    
+    padding-left: 2em; /* 본문과 동일 들여쓰기 */
   }
   .info { 
     margin-bottom: 50px;  
@@ -75,6 +78,10 @@
     .images img { 
       flex: 0 0 48%; 
       max-width: 48%; 
+    }
+    .golf-name { 
+      font-size: 12px;   /* 모바일에서 본문과 동일하게 축소 */
+      padding-left: 1em; /* 들여쓰기 한 번만 */
     }
   }
 </style>
