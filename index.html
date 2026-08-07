@@ -123,13 +123,19 @@ hr {
 
 /* 항공권~차량 항목은 - 표시 + 더 깊게 들여쓰기 */
 .cost p:not(:first-child):not(.notice) {
-  padding-left: 3em; /* 총 비용보다 더 들여쓰기 */
+  padding-left: 2em; /* 총 비용보다 더 들여쓰기 */
 }
 .cost p:not(:first-child):not(.notice)::before {
   content: "- ";
   color: #f5f5f5;
 }
-
+.cost p.notice {
+  margin-top: 30px;    /* 위쪽 간격 */
+  margin-bottom: 40px; /* 아래쪽 간격 */
+  color: #ff6347;
+  font-weight: bold;
+  padding-left: 0;
+}
 </style>
 </head>
 <body>
@@ -237,13 +243,6 @@ hr {
   <p>그린피: 463,722원 (라운딩 3회)</p>
   <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
   <p class="notice">※ 식사 비용, 카트비/캐디팁, 개인 경비 등 제외</p>
-.cost p.notice {
-  margin-top: 24px;    /* 위쪽 간격 */
-  margin-bottom: 40px; /* 아래쪽 간격 */
-  color: #ff6347;
-  font-weight: bold;
-  padding-left: 0;
-}
 </div>
 
 </body>
