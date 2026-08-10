@@ -164,7 +164,7 @@
   <!-- 기존 골프 투어 비용 -->
 <h2>💰 골프 투어 비용 (1인 기준)</h2>
 <div class="cost">
-  <p style="font-weight:bold;color:#daa520;">◆ 기본 비용: 1,369,761원</p>
+  <p style="font-weight:bold;color:#daa520;">기본 비용: 1,369,761원</p>
   <p>항공권: 550,500원</p>
   <p>숙소: 256,031원 (4박)</p>
   <p>그린피: 463,722원 (라운딩 3회)</p>
@@ -173,27 +173,32 @@
 
 <hr style="margin:20px 0;">
 
-<p>※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
+<p>식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
 
-<!-- 입력 박스 -->
-<div style="margin-bottom:10px;">
-  항목: <input type="text" id="item" placeholder="항목 입력">
-  회수: <input type="number" id="count" placeholder="횟수"> 회
-  단가: <input type="number" id="price" placeholder="단가"> 원
-  <button onclick="addItem()">추가</button>
+<!-- 입력 박스 (들여쓰기 + 네모 박스 크기 조정 + 간격 조정 + 모바일 대응) -->
+<div style="margin:10px 0 20px 20px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+  항목 <input type="text" id="item" placeholder="항목 입력" 
+        style="width:120px;height:32px;padding:4px;">
+  회수 <input type="number" id="count" placeholder="횟수" 
+        style="width:70px;height:32px;padding:4px;"> 회
+  단가 <input type="number" id="price" placeholder="단가" 
+        style="width:100px;height:32px;padding:4px;"> 원
+  <button onclick="addItem()" style="height:36px;padding:0 14px;">추가</button>
 </div>
 
 <!-- 추가 항목 리스트 -->
-<ul id="extraList" style="list-style-type:none;padding-left:0;margin-top:10px;"></ul>
+<ul id="extraList" style="list-style-type:none;padding-left:20px;margin-top:10px;"></ul>
 
-<hr style="margin:20px 0;">
-
-<p style="font-weight:bold;color:#2e7d32;">
-  💵 총 비용: 기본 비용(1,369,761원) + 추가 비용(<span id="extraTotal">0</span>원) = <span id="grandTotal">1,369,761</span>원
-</p>
+<!-- 총 비용 박스 -->
+<div style="border:2px solid #2e7d32; border-radius:6px; padding:12px; margin-top:24px; background:#f9fff9;">
+  <p style="font-weight:bold;color:#2e7d32;margin:0;">
+    💵 총 비용: 기본 비용(1,369,761원) + 추가 비용(<span id="extraTotal">0</span>원) = 
+    <span id="grandTotal">1,369,761</span>원
+  </p>
+</div>
 
 <script>
-let baseTotal = 1369761; // 기본 비용 합계
+let baseTotal = 1369761;
 let extraTotal = 0;
 
 function addItem() {
@@ -202,15 +207,15 @@ function addItem() {
   let price = parseInt(document.getElementById("price").value) || 0;
   let total = count * price;
 
-  // 리스트에 추가
-  let li = document.createElement("li");
-  li.textContent = item + ": " + total.toLocaleString() + "원 (" + count + "회)";
-  document.getElementById("extraList").appendChild(li);
+  if(item && count > 0 && price > 0){
+    let li = document.createElement("li");
+    li.textContent = item + ": " + total.toLocaleString() + "원 (" + count + "회)";
+    document.getElementById("extraList").appendChild(li);
 
-  // 총 비용 업데이트
-  extraTotal += total;
-  document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
-  document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
+    extraTotal += total;
+    document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
+    document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
+  }
 
   // 입력값 초기화
   document.getElementById("item").value = "";
