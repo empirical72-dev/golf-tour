@@ -174,8 +174,8 @@
   <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
 </div>
 
-<!-- 안내 문구 -->
-<p class="notice" style="color:#ff6347;font-weight:bold;margin-top:20px;margin-bottom:20px;">
+<!-- 안내 문구 강조 -->
+<p style="color:#ffd700;font-weight:bold;margin-top:20px;margin-bottom:20px;">
   ※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출
 </p>
 
@@ -193,9 +193,9 @@
   </button>
 </div>
 
-<!-- 추가 비용 블록 (고정) -->
+<!-- 추가 비용 블록 (황금색 점은 CSS에서 자동 적용) -->
 <div class="cost">
-  <p id="extraCostTitle" style="color:#ffd700;font-weight:bold;">
+  <p id="extraCostTitle" class="no-dot" style="color:#ffd700;font-weight:bold;">
     추가 비용: 0원
   </p>
   <div id="extraList"></div>
@@ -244,7 +244,8 @@ function addItem() {
     document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
     document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
 
-    document.getElementById("extraCostTitle").textContent = "• 추가 비용: " + extraTotal.toLocaleString() + "원";
+    // 추가 비용 라인 갱신 (황금색 점은 CSS에서 자동 적용)
+    document.getElementById("extraCostTitle").textContent = "추가 비용: " + extraTotal.toLocaleString() + "원";
   }
 
   document.getElementById("item").value = "";
