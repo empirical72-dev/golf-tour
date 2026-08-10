@@ -202,35 +202,49 @@
   <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
 </div>
 
-<!-- 추가 항목 리스트 -->
-<ul id="extraList" style="list-style-type:none;padding-left:20px;margin-top:10px;"></ul>
+<!-- 추가 비용 블록 (고정) -->
+<div class="cost">
+  <p id="extraCostTitle" style="color:#ffd700;font-weight:bold;">
+    • 추가 비용: 0원
+  </p>
+  <div id="extraList"></div>
+</div>
 
 <!-- 총 비용 -->
-<p class="no-dot" style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:20px;margin-bottom:40px; margin-left:0;">
-  💵 총 비용: 기본 비용(<span id="baseTotal">1,369,761</span>원) + 추가 비용(<span id="extraTotal">0</span>원) = 
-  <span id="grandTotal">1,369,761</span>원
+<p style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:25px;margin-bottom:40px;">
+  💵 총 비용: 기본 비용(<span id="baseTotal"></span>원) + 추가 비용(<span id="extraTotal">0</span>원) = 
+  <span id="grandTotal"></span>원
 </p>
 
 <script>
 let extraTotal = 0;
 
-// 기본 비용을 cost 영역에서 읽어오기
 function getBaseTotal() {
   const text = document.getElementById("baseCost").textContent;
-  const num = text.replace(/[^0-9]/g, "");
-  return parseInt(num) || 0;
+  return parseInt(text.replace(/[^0-9]/g, "")) || 0;
 }
 
 function addItem() {
-  let item = document.getElementById("item").value;
+  let item = document.getElementById("item").value.trim();
   let count = parseInt(document.getElementById("count").value) || 0;
   let price = parseInt(document.getElementById("price").value) || 0;
   let total = count * price;
 
   if(item && count > 0 && price > 0){
-    let li = document.createElement("li");
-    li.textContent = item + ": " + total.toLocaleString() + "원 (" + count + "회)";
-    document.getElementById("extraList").appendChild(li);
+    // 중복 항목 체크
+    let existing = Array.from(document.getElementById("extraList").children)
+      .find(p => p.textContent.startsWith("- " + item + ":"));
+
+    if(existing){
+      let oldText = existing.textContent;
+      let oldTotal = parseInt(oldText.replace(/[^0-9]/g,"")) || 0;
+      let newTotal = oldTotal + total;
+      existing.textContent = "- " + item + ": " + newTotal.toLocaleString() + "원 (" + count + "회 추가)";
+    } else {
+      let p = document.createElement("p");
+      p.textContent = "- " + item + ": " + total.toLocaleString() + "원 (" + count + "회)";
+      document.getElementById("extraList").appendChild(p);
+    }
 
     extraTotal += total;
 
@@ -238,13 +252,21 @@ function addItem() {
     document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
     document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
     document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
+
+    document.getElementById("extraCostTitle").textContent = "• 추가 비용: " + extraTotal.toLocaleString() + "원";
   }
 
-  // 입력값 초기화
   document.getElementById("item").value = "";
   document.getElementById("count").value = "";
   document.getElementById("price").value = "";
 }
+
+window.onload = function() {
+  let baseTotal = getBaseTotal();
+  document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
+  document.getElementById("grandTotal").textContent = baseTotal.toLocaleString();
+};
 </script>
+
 </body>
 </html>
