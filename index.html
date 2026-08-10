@@ -8,59 +8,79 @@
   <meta property="og:description" content="항공권, 숙소, 카지노, 골프장, 차량까지 정리된 베트남 골프 투어 일정표">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Noto Sans KR','Roboto',system-ui,sans-serif; line-height:1.6; margin:24px; background:#111; color:#f5f5f5; font-size:16px; }
-    h1 { color:#ffd700; font-size:28px; font-weight:700; }
-    h2 { color:#ffae42; font-size:22px; margin-top:28px; }
-    h3 { color:#87cefa; font-size:18px; margin-top:20px; }
-    a { color:#00bfff; text-decoration:none; transition:color 0.2s ease; }
-    a:hover { color:#ffd700; text-decoration:underline; }
-    p { margin:8px 0; font-weight:500; padding-left:1.5em; }
-    p::before { content:"• "; color:#ffd700; }
-    p.notice { margin:10px 0 20px; color:#ff6347; font-weight:bold; padding-left:0; }
-    p.notice::before { content:none; }
-    .golf-name { font-size:16px; color:#00bfff; font-weight:600; margin-bottom:12px; padding-left:1.5em; }
-    hr { border:none; height:1px; background:linear-gradient(to right,#333,#666,#333); margin:36px 0; }
-    .images { display:flex; flex-wrap:wrap; justify-content:flex-start; margin-top:20px; gap:12px; }
-    .images img { flex:0 0 25%; max-width:25%; height:auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.3); transition:transform 0.2s ease; }
-    .images img:hover { transform:scale(1.03); }
-    .info { margin-bottom:30px; }
-    @media (max-width:1024px){ body{font-size:12px;} h1{font-size:22px;} h2{font-size:16px;} h3{font-size:14px;} .images{gap:6px;} .golf-name{font-size:12px;padding-left:1em;} hr{margin:20px 0;} .info{margin-bottom:20px;} }
-    @media (max-width:600px){ .images img{flex:0 0 48%; max-width:48%;} }
-    .cost p { margin:6px 0; font-weight:500; }
-    .cost p::before { content:none; }
-    .cost p:first-child { padding-left:1.5em; }
-    .cost p:first-child::before { content:"• "; color:#ffd700; font-weight:bold; }
-    .cost p:not(:first-child):not(.notice) { padding-left:2.5em; }
-    .cost p:not(:first-child):not(.notice)::before { content:"- "; color:#f5f5f5; }
-    .cost p.notice { margin-top:20px; margin-bottom:30px; color:#ff6347; font-weight:bold; padding-left:0; display: inline-block; /* 마진 상쇄 방지 */ }
- .cost p.notice {
-      margin-top: 30px;
-      margin-bottom: 50px;
-      color: #ff6347;
-      font-weight: bold;
-      padding-left: 0;
-      display: inline-block;
-    }
+<style>
+  body { font-family: 'Noto Sans KR','Roboto',system-ui,sans-serif; line-height:1.6; margin:24px; background:#111; color:#f5f5f5; font-size:16px; }
+  h1 { color:#ffd700; font-size:28px; font-weight:700; }
+  h2 { color:#ffae42; font-size:22px; margin-top:28px; }
+  h3 { color:#87cefa; font-size:18px; margin-top:20px; }
+  a { color:#00bfff; text-decoration:none; transition:color 0.2s ease; }
+  a:hover { color:#ffd700; text-decoration:underline; }
+  p { margin:8px 0; font-weight:500; padding-left:1.5em; }
+  p::before { content:"• "; color:#ffd700; }
+  p.notice { margin:10px 0 20px; color:#ff6347; font-weight:bold; padding-left:0; }
+  p.notice::before { content:none; }
+  .golf-name { font-size:16px; color:#00bfff; font-weight:600; margin-bottom:12px; padding-left:1.5em; }
+  hr { border:none; height:1px; background:linear-gradient(to right,#333,#666,#333); margin:36px 0; }
 
-.images {
-  display: flex;
-  flex-wrap: wrap;   /* 줄바꿈 허용 */
-  gap: 10px;
-  justify-content: flex-start; /* 왼쪽부터 정렬 */
-    }
-
-    .images img {
-      flex: 1;
-      max-width: 300px;
-      height: auto;
-    }
-/* 모바일 전용 규칙 (예: 최대 600px 화면) */
-@media (max-width: 600px) {
-  .images img {
-    flex: 1 1 45%;   /* 한 줄에 2개씩 들어가도록 */
-    max-width: 45%;  /* 화면 절반 정도 크기 */
+  /* 이미지 영역 (PC 기본) */
+  .images {
+    display: flex;
+    flex-wrap: wrap;        /* 줄바꿈 허용 */
+    margin-top: 20px;
+    gap: 12px;
+    justify-content: flex-start; /* 왼쪽 정렬 */
   }
-}
+
+  .images img {
+    flex: 0 0 25%;          /* PC에서는 4개씩 */
+    max-width: 25%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+    margin: 0;              /* 혹시 auto 마진 있으면 제거 */
+  }
+
+  .images img:hover {
+    transform: scale(1.03);
+  }
+
+  .info { margin-bottom:30px; }
+
+  /* 태블릿 이하 */
+  @media (max-width:1024px){
+    body{font-size:12px;}
+    h1{font-size:22px;}
+    h2{font-size:16px;}
+    h3{font-size:14px;}
+    .images{gap:6px;}
+    .golf-name{font-size:12px;padding-left:1em;}
+    hr{margin:20px 0;}
+    .info{margin-bottom:20px;}
+  }
+
+  /* 모바일 전용 규칙 (예: 최대 600px 화면) */
+  @media (max-width:600px) {
+    .images img {
+      flex: 0 0 48%;        /* 모바일에서는 2개씩 */
+      max-width: 48%;
+    }
+  }
+
+  .cost p { margin:6px 0; font-weight:500; }
+  .cost p::before { content:none; }
+  .cost p:first-child { padding-left:1.5em; }
+  .cost p:first-child::before { content:"• "; color:#ffd700; font-weight:bold; }
+  .cost p:not(:first-child):not(.notice) { padding-left:2.5em; }
+  .cost p:not(:first-child):not(.notice)::before { content:"- "; color:#f5f5f5; }
+  .cost p.notice {
+    margin-top:20px;
+    margin-bottom:30px;
+    color:#ff6347;
+    font-weight:bold;
+    padding-left:0;
+    display:block; /* 마진 상쇄 방지 */
+  }
   </style>
 </head>
 <body>
