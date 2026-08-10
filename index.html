@@ -41,7 +41,10 @@
   padding-left: 0;
   display: inline-block; /* 마진 상쇄 방지 */
 }
-</style>
+/* 황금색 점 제거 */
+.no-dot::before {
+  content: none !important;
+}</style>
 </head>
 <body>
   <h1>베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)</h1>
@@ -171,18 +174,18 @@
   <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
 </div>
 
-<!-- 안내 문구 (황금색 점 제거) -->
-<p style="margin-top:16px; list-style-type:none; margin-left:0;">
+<!-- 안내 문구 -->
+<p class="no-dot" style="margin-top:25px; margin-left:0;">
   ※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출
 </p>
 
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
-  항목 <input type="text" id="item" placeholder="항목 입력" 
+  항목&nbsp;<input type="text" id="item" placeholder="항목 입력" 
         style="width:80px;height:25px;padding:4px;">&nbsp;&nbsp;&nbsp;
-  회수 <input type="number" id="count" placeholder="횟수" 
+  회수&nbsp;<input type="number" id="count" placeholder="횟수" 
         style="width:80px;height:25px;padding:4px;">&nbsp;회&nbsp;&nbsp;&nbsp;
-  단가 <input type="number" id="price" placeholder="단가" 
+  단가&nbsp;<input type="number" id="price" placeholder="단가" 
         style="width:80px;height:25px;padding:4px;">&nbsp;원&nbsp;&nbsp;&nbsp;
   <button onclick="addItem()" 
           style="height:28px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
@@ -190,18 +193,33 @@
   </button>
 </div>
 
-<!-- 추가 항목 리스트 (황금색 점 제거) -->
+<!-- 기본 비용 영역 -->
+<div class="cost">
+  <p id="baseCost" style="font-weight:bold;color:#daa520;">기본 비용: 1,369,761원</p>
+  <p>항공권: 550,500원</p>
+  <p>숙소: 256,031원 (4박)</p>
+  <p>그린피: 463,722원 (라운딩 3회)</p>
+  <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
+</div>
+
+<!-- 추가 항목 리스트 -->
 <ul id="extraList" style="list-style-type:none;padding-left:20px;margin-top:10px;"></ul>
 
-<!-- 총 비용 (황금색 점 제거 + 아래 간격 40px) -->
-<p style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:20px;margin-bottom:50px; list-style-type:none; margin-left:0;">
-  💵 총 비용: 기본 비용(1,369,761원) + 추가 비용(<span id="extraTotal">0</span>원) = 
+<!-- 총 비용 -->
+<p class="no-dot" style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:20px;margin-bottom:40px; margin-left:0;">
+  💵 총 비용: 기본 비용(<span id="baseTotal">1,369,761</span>원) + 추가 비용(<span id="extraTotal">0</span>원) = 
   <span id="grandTotal">1,369,761</span>원
 </p>
 
 <script>
-let baseTotal = 1369761;
 let extraTotal = 0;
+
+// 기본 비용을 cost 영역에서 읽어오기
+function getBaseTotal() {
+  const text = document.getElementById("baseCost").textContent;
+  const num = text.replace(/[^0-9]/g, "");
+  return parseInt(num) || 0;
+}
 
 function addItem() {
   let item = document.getElementById("item").value;
@@ -215,6 +233,9 @@ function addItem() {
     document.getElementById("extraList").appendChild(li);
 
     extraTotal += total;
+
+    let baseTotal = getBaseTotal();
+    document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
     document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
     document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
   }
