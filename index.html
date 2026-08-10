@@ -42,10 +42,11 @@
       display: inline-block;
     }
 
-    .images {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
+.images {
+  display: flex;
+  flex-wrap: wrap;   /* 줄바꿈 허용 */
+  gap: 10px;
+  justify-content: flex-start; /* 왼쪽부터 정렬 */
     }
 
     .images img {
