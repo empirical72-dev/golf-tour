@@ -68,7 +68,7 @@
   <a href="https://www.google.com/maps/dir/Cat+Bi+International+Airport/Royal+Ha+Long+Hotel" 
      target="_blank" 
      style="text-decoration:none;">
-    🚗
+    🚗 이동 경로
   </a>
 </p>
   <div class="images">
@@ -101,7 +101,7 @@
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/FLC+Ha+Long+Golf+Club" 
      target="_blank" 
      style="text-decoration:none;">
-    🚗
+    🚗 이동 경로
   </a>
 </p>
     <div class="images">
@@ -119,7 +119,7 @@
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/Ruby+Tree+Golf+Resort" 
      target="_blank" 
      style="text-decoration:none;">
-    🚗
+    🚗 이동 경로
   </a>
 </p>
     <div class="images">
@@ -137,7 +137,7 @@
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/Tuan+Chau+Golf+Resort" 
      target="_blank" 
      style="text-decoration:none;">
-    🚗
+    🚗 이동 경로
   </a>
 </p>
     <div class="images">
@@ -161,16 +161,63 @@
 
   <hr>
 
-  <!-- 골프 투어 비용 -->
-  <h2>💰 골프 투어 비용 (1인 기준)</h2>
-  <div class="cost">
-    <p>총 비용: 1,369,761원</p>
-    <p>항공권: 550,500원</p>
-    <p>숙소: 256,031원 (4박)</p>
-    <p>그린피: 463,722원 (라운딩 3회)</p>
-    <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
-    <p class="notice">※ 식사 비용, 카트비/캐디팁, 개인 경비 등 제외</p>
-  </div>
+  <!-- 기존 골프 투어 비용 -->
+<h2>💰 골프 투어 비용 (1인 기준)</h2>
+<div class="cost">
+  <p style="font-weight:bold;color:#daa520;">◆ 기본 비용: 1,369,761원</p>
+  <p>항공권: 550,500원</p>
+  <p>숙소: 256,031원 (4박)</p>
+  <p>그린피: 463,722원 (라운딩 3회)</p>
+  <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
+</div>
+
+<hr style="margin:20px 0;">
+
+<p>※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
+
+<!-- 입력 박스 -->
+<div style="margin-bottom:10px;">
+  항목: <input type="text" id="item" placeholder="항목 입력">
+  회수: <input type="number" id="count" placeholder="횟수"> 회
+  단가: <input type="number" id="price" placeholder="단가"> 원
+  <button onclick="addItem()">추가</button>
+</div>
+
+<!-- 추가 항목 리스트 -->
+<ul id="extraList" style="list-style-type:none;padding-left:0;margin-top:10px;"></ul>
+
+<hr style="margin:20px 0;">
+
+<p style="font-weight:bold;color:#2e7d32;">
+  💵 총 비용: 기본 비용(1,369,761원) + 추가 비용(<span id="extraTotal">0</span>원) = <span id="grandTotal">1,369,761</span>원
+</p>
+
+<script>
+let baseTotal = 1369761; // 기본 비용 합계
+let extraTotal = 0;
+
+function addItem() {
+  let item = document.getElementById("item").value;
+  let count = parseInt(document.getElementById("count").value) || 0;
+  let price = parseInt(document.getElementById("price").value) || 0;
+  let total = count * price;
+
+  // 리스트에 추가
+  let li = document.createElement("li");
+  li.textContent = item + ": " + total.toLocaleString() + "원 (" + count + "회)";
+  document.getElementById("extraList").appendChild(li);
+
+  // 총 비용 업데이트
+  extraTotal += total;
+  document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
+  document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
+
+  // 입력값 초기화
+  document.getElementById("item").value = "";
+  document.getElementById("count").value = "";
+  document.getElementById("price").value = "";
+}
+</script>
 
 </body>
 </html>
