@@ -171,27 +171,25 @@
   <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
 </div>
 
-<hr style="margin:20px 0;">
+<p>※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
 
-<p>식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
-
-<!-- 입력 박스 (들여쓰기 + 네모 박스 크기 조정 + 간격 조정 + 모바일 대응) -->
-<div style="margin:10px 0 20px 20px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+<!-- 입력 박스 (간격 동일 + 모바일 대응) -->
+<div style="margin:10px 0 20px 20px; display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
   항목 <input type="text" id="item" placeholder="항목 입력" 
         style="width:120px;height:32px;padding:4px;">
   회수 <input type="number" id="count" placeholder="횟수" 
         style="width:70px;height:32px;padding:4px;"> 회
   단가 <input type="number" id="price" placeholder="단가" 
         style="width:100px;height:32px;padding:4px;"> 원
-  <button onclick="addItem()" style="height:36px;padding:0 14px;">추가</button>
+  <button onclick="addItem()" style="height:36px;padding:0 16px;">추가</button>
 </div>
 
 <!-- 추가 항목 리스트 -->
 <ul id="extraList" style="list-style-type:none;padding-left:20px;margin-top:10px;"></ul>
 
 <!-- 총 비용 박스 -->
-<div style="border:2px solid #2e7d32; border-radius:6px; padding:12px; margin-top:24px; background:#f9fff9;">
-  <p style="font-weight:bold;color:#2e7d32;margin:0;">
+<div style="border:2px solid #2e7d32; border-radius:6px; padding:14px; margin-top:28px; background:#f9fff9;">
+  <p style="font-weight:bold;color:#2e7d32;font-size:18px;margin:0;">
     💵 총 비용: 기본 비용(1,369,761원) + 추가 비용(<span id="extraTotal">0</span>원) = 
     <span id="grandTotal">1,369,761</span>원
   </p>
@@ -223,6 +221,7 @@ function addItem() {
   document.getElementById("price").value = "";
 }
 </script>
+
 
 </body>
 </html>
