@@ -175,7 +175,7 @@
 </div>
 
 <!-- 안내 문구 -->
-<p class="no-dot" style="margin-top:25px; margin-left:0;">
+<p class="notice" style="color:#ff6347;font-weight:bold;margin-top:20px;margin-bottom:20px;">
   ※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출
 </p>
 
@@ -193,24 +193,15 @@
   </button>
 </div>
 
-<!-- 기본 비용 영역 -->
-<div class="cost">
-  <p id="baseCost" style="font-weight:bold;color:#daa520;">기본 비용: 1,369,761원</p>
-  <p>항공권: 550,500원</p>
-  <p>숙소: 256,031원 (4박)</p>
-  <p>그린피: 463,722원 (라운딩 3회)</p>
-  <p>차량: 99,508원 (1인당 공항 픽업/샌딩, 골프장 왕복)</p>
-</div>
-
 <!-- 추가 비용 블록 (고정) -->
 <div class="cost">
   <p id="extraCostTitle" style="color:#ffd700;font-weight:bold;">
-    • 추가 비용: 0원
+    추가 비용: 0원
   </p>
   <div id="extraList"></div>
 </div>
 
-<!-- 총 비용 -->
+<!-- 총 비용 (흰색 글씨만, 황금색 없음) -->
 <p style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:25px;margin-bottom:40px;">
   💵 총 비용: 기본 비용(<span id="baseTotal"></span>원) + 추가 비용(<span id="extraTotal">0</span>원) = 
   <span id="grandTotal"></span>원
