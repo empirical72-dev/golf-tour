@@ -249,33 +249,39 @@ input[type="number"]:focus {
 <p class="notice">※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
 
 <!-- 입력 박스 -->
-<div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
-  항목&nbsp;<input type="text" id="item" placeholder="입력" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
-  회수&nbsp;<input type="number" id="count" placeholder="입력" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;회&nbsp;&nbsp;&nbsp;
-  단가&nbsp;<input type="number" id="price" placeholder="입력" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;원&nbsp;&nbsp;&nbsp;
+<div class="input-box" style="margin:12px 0 20px 20px;">
+  <div class="field">
+    <label for="item">항목</label>
+    <input type="text" id="item" placeholder="입력">
+  </div>
+  <div class="field">
+    <label for="count">회수</label>
+    <input type="number" id="count" placeholder="입력"> 회
+  </div>
+  <div class="field">
+    <label for="price">단가</label>
+    <input type="number" id="price" placeholder="입력"> 원
+  </div>
   <button onclick="addItem()" 
           style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
     추가
   </button>
-<button onclick="resetExtra()" 
-        style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
+  <button onclick="resetExtra()" 
+          style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
     Reset
-</button>
+  </button>
 </div>
 
-<!-- 추가 비용 블록 (황금색 점은 CSS 스타일로 자동 적용) -->
+
+<!-- 추가 비용 -->
 <div class="cost">
-<p id="extraCostTitle" style="color:#FFD700;font-weight:bold;">
-  추가 비용: 0원
-</p>
+  <p id="extraCostTitle" style="color:#FFD700;font-weight:bold;">
+    추가 비용: 0원
+  </p>
   <div id="extraList"></div>
 </div>
 
-
-<!-- 모바일 전용 총 비용 -->
+<!-- 총 비용 (PC/모바일 모두 이 블록만 사용) -->
 <div class="total-cost">
   <span class="main-line">💵 총 비용: <span id="grandTotal">1,369,761</span>원</span>
   <span class="sub-line">
