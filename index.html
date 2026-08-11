@@ -30,7 +30,7 @@
     .cost p::before { content:none; }
     .cost p:first-child { padding-left:1.5em; }
     .cost p:first-child::before { content:"• "; color:#ffd700; font-weight:bold; }
-    .cost p:not(:first-child):not(.notice) { padding-left:2em; }
+    .cost p:not(:first-child):not(.notice) { padding-left:3em; }
     .cost p:not(:first-child):not(.notice)::before { content:"- "; color:#f5f5f5; }
     .cost p.notice { margin-top:30px; margin-bottom:50px; color:#ff6347; font-weight:bold; padding-left:0; }
 .cost p.notice {
@@ -41,10 +41,11 @@
   padding-left: 0;
   display: inline-block; /* 마진 상쇄 방지 */
 }
+/* 추가 비용 항목 들여쓰기 */
+#extraList p { padding-left: 3em; }
 /* 황금색 점 제거 */
-.no-dot::before {
-  content: none !important;
-}</style>
+.no-dot::before { content: none !important; }
+</style>
 </head>
 <body>
   <h1>베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)</h1>
