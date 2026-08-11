@@ -165,6 +165,7 @@
   <hr>
 
 <!-- 골프 투어 비용 (기본 비용 항목들) -->
+  <h2>💰 골프 투어 비용 (1인 기준)</h2>
 <div class="cost">
   <p id="baseCost">기본 비용: 1,369,761원</p>
   <p>- 항공권: 550,500원</p>
@@ -173,10 +174,8 @@
   <p>- 차량: 99,508원 (픽업/샌딩)</p>
 </div>
 
-<!-- 안내 문구 (빨간색 강조, 황금색 점 없음) -->
-<p style="color:#ff0000;font-weight:bold;margin-top:20px;margin-bottom:20px;">
-  ※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출
-</p>
+<!-- 안내 문구 (notice 클래스 적용) -->
+<p class="notice">※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
 
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
@@ -194,14 +193,12 @@
 
 <!-- 추가 비용 블록 (황금색 점은 CSS 스타일로 자동 적용) -->
 <div class="cost">
-  <p id="extraCostTitle" style="color:#ffd700;font-weight:bold;">
-    추가 비용: 0원
-  </p>
+<p id="extraCostTitle" class="gold-dot">추가 비용: 0원</p>
   <div id="extraList"></div>
 </div>
 
-<!-- 총 비용 (흰색 글씨만, 황금색 점 없음) -->
-<p style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:25px;margin-bottom:40px;">
+<!-- 총 비용 (흰색 글씨만, 황금색 점 없음 + margin 유지) -->
+<p class="no-dot" style="font-weight:bold;color:#ffffff;font-size:18px;margin-top:25px;margin-bottom:40px;">
   💵 총 비용: 기본 비용(<span id="baseTotal">1,369,761</span>원) + 추가 비용(<span id="extraTotal">0</span>원) = 
   <span id="grandTotal">1,369,761</span>원
 </p>
