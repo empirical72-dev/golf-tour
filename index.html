@@ -182,13 +182,13 @@
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
   항목&nbsp;<input type="text" id="item" placeholder="입력" 
-        style="width:60px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
   회수&nbsp;<input type="number" id="count" placeholder="입력" 
-        style="width:60px;height:23px;padding:4px;text-align:center;">&nbsp;회&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;회&nbsp;&nbsp;&nbsp;
   단가&nbsp;<input type="number" id="price" placeholder="입력" 
-        style="width:60px;height:23px;padding:4px;text-align:center;">&nbsp;원&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;원&nbsp;&nbsp;&nbsp;
   <button onclick="addItem()" 
-          style="height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
+          style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
     추가
   </button>
 </div>
@@ -233,6 +233,7 @@ function addItem() {
       existing.textContent = "- " + item + ": " + newTotal.toLocaleString() + "원 (" + count + "회 추가)";
     } else {
       let p = document.createElement("p");
+      p.className = "no-dot";   // 골드닷 제거용 클래스
       p.textContent = "- " + item + ": " + total.toLocaleString() + "원 (" + count + "회)";
       document.getElementById("extraList").appendChild(p);
     }
