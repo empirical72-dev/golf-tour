@@ -7,149 +7,100 @@
   <meta property="og:title" content="베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)">
   <meta property="og:description" content="항공권, 숙소, 카지노, 골프장, 차량까지 정리된 베트남 골프 투어 일정표">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-/* 기본 글꼴 및 본문 */
-body {
-  font-family: 'Noto Sans KR','Roboto',system-ui,sans-serif;
-  line-height: 1.6;
-  margin: 24px;
-  background: #111;
-  color: #f5f5f5;
-  font-size: 16px;
-}
-h1 { color: #ffd700; font-size: 28px; font-weight: 700; }
-h2 { color: #ffae42; font-size: 22px; margin-top: 28px; }
-h3 { color: #87cefa; font-size: 18px; margin-top: 20px; }
-a { color: #00bfff; text-decoration: none; transition: color 0.2s ease; }
-a:hover { color: #ffd700; text-decoration: underline; }
-p { margin: 8px 0; font-weight: 500; padding-left: 1.5em; }
-p::before { content: "• "; color: #ffd700; }
-p.notice { margin: 10px 0 20px; color: #ff6347; font-weight: bold; padding-left: 0; }
-p.notice::before { content: none; }
-
-/* 골프장 이름 */
-.golf-name {
-  font-size: 16px;
-  color: #00bfff;
-  font-weight: 600;
-  margin-bottom: 12px;
-  padding-left: 1.5em;
-}
-
-/* 구분선 */
-hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right,#333,#666,#333);
-  margin: 36px 0;
-}
-
-/* 이미지 */
-.images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 20px;
-  gap: 12px;
-}
-.images img {
-  flex: 0 0 25%;
-  max-width: 25%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
-}
-.images img:hover { transform: scale(1.03); }
-
-/* 정보 블록 */
-.info { margin-bottom: 30px; }
-
-/* 반응형 */
-@media (max-width:1024px){
-  body { font-size: 12px; }
-  h1 { font-size: 22px; }
-  h2 { font-size: 16px; }
-  h3 { font-size: 14px; }
-  .images { gap: 6px; }
-  .golf-name { font-size: 12px; padding-left: 1em; }
-  hr { margin: 20px 0; }
-  .info { margin-bottom: 20px; }
-}
-@media (max-width:600px){
-  .images img { flex: 0 0 48%; max-width: 48%; }
-}
-
-/* 비용 표시 */
-.cost p { margin: 6px 0; font-weight: 500; }
-.cost p::before { content: none; }
-.cost p:first-child { padding-left: 1.5em; }
-.cost p:first-child::before { content: "• "; color: #ffd700; font-weight: bold; }
-.cost p:not(:first-child):not(.notice) { padding-left: 3em; }
-.cost p:not(:first-child):not(.notice)::before { content: "- "; color: #f5f5f5; }
+  <style>
+    body { font-family: 'Noto Sans KR','Roboto',system-ui,sans-serif; line-height:1.6; margin:24px; background:#111; color:#f5f5f5; font-size:16px; }
+    h1 { color:#ffd700; font-size:28px; font-weight:700; }
+    h2 { color:#ffae42; font-size:22px; margin-top:28px; }
+    h3 { color:#87cefa; font-size:18px; margin-top:20px; }
+    a { color:#00bfff; text-decoration:none; transition:color 0.2s ease; }
+    a:hover { color:#ffd700; text-decoration:underline; }
+    p { margin:8px 0; font-weight:500; padding-left:1.5em; }
+    p::before { content:"• "; color:#ffd700; }
+    p.notice { margin:10px 0 20px; color:#ff6347; font-weight:bold; padding-left:0; }
+    p.notice::before { content:none; }
+    .golf-name { font-size:16px; color:#00bfff; font-weight:600; margin-bottom:12px; padding-left:1.5em; }
+    hr { border:none; height:1px; background:linear-gradient(to right,#333,#666,#333); margin:36px 0; }
+    .images { display:flex; flex-wrap:wrap; justify-content:flex-start; margin-top:20px; gap:12px; }
+    .images img { flex:0 0 25%; max-width:25%; height:auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.3); transition:transform 0.2s ease; }
+    .images img:hover { transform:scale(1.03); }
+    .info { margin-bottom:30px; }
+    @media (max-width:1024px){ body{font-size:12px;} h1{font-size:22px;} h2{font-size:16px;} h3{font-size:14px;} .images{gap:6px;} .golf-name{font-size:12px;padding-left:1em;} hr{margin:20px 0;} .info{margin-bottom:20px;} }
+    @media (max-width:600px){ .images img{flex:0 0 48%; max-width:48%;} }
+    .cost p { margin:6px 0; font-weight:500; }
+    .cost p::before { content:none; }
+    .cost p:first-child { padding-left:1.5em; }
+    .cost p:first-child::before { content:"• "; color:#ffd700; font-weight:bold; }
+    .cost p:not(:first-child):not(.notice) { padding-left:3em; }
+    .cost p:not(:first-child):not(.notice)::before { content:"- "; color:#f5f5f5; }
+    .cost p.notice { margin-top:30px; margin-bottom:50px; color:#ff6347; font-weight:bold; padding-left:0; }
 .cost p.notice {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 30px;     /* 위쪽 간격 */
+  margin-bottom: 50px;  /* 아래쪽 간격 */
   color: #ff6347;
   font-weight: bold;
   padding-left: 0;
   display: inline-block; /* 마진 상쇄 방지 */
 }
-
 /* 추가 비용 항목 들여쓰기 */
-#extraList p { padding-left: 3em !important; }
-
+#extraList p {
+  padding-left: 3em !important;
+}
 /* 황금색 점 제거 */
 .no-dot::before { content: none !important; }
-
-/* 입력창 */
 input[type="text"],
 input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 13px;
-  height: 30px; /* 높이 통일 */
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   transition: border-color 0.2s, box-shadow 0.2s;
-  text-align: center; /* placeholder 포함 가운데 정렬 */
 }
-input[type="text"]:focus,
+
+input[type="text"]:focus,ㄴ
 input[type="number"]:focus {
   border-color: #FFD700;
   box-shadow: 0 0 4px rgba(255,215,0,0.6);
   outline: none;
 }
-
-/* 입력 박스 반응형 */
 @media (max-width: 768px) {
   .input-box {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .input-box > * {
     margin: 6px 0;
     width: 100%;
     max-width: 250px;
   }
 }
+@media (max-width: 768px) {
+  .total-cost {
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+    margin-top: 12px;
+  }
 
-/* 총 비용 표시 */
-.total-cost {
-  margin-top: 12px;
+  .total-cost .main-line {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  .total-cost .sub-line {
+    display: block;
+    color: #555;
+    font-size: 14px;
+  }
 }
-.total-cost .main-line {
-  font-size: 18px;   /* 총 비용 강조 */
-  font-weight: bold;
-  display: block;
-  margin-bottom: 6px;
-}
+/* PC에서는 한 줄로 */
+.total-cost .main-line,
 .total-cost .sub-line {
-  font-size: 16px;   /* 본문과 동일한 크기 */
-  color: #f5f5f5;    /* 본문 텍스트 색상 */
-  display: block;
-  margin-left: 2em;  /* 💵 총 비용의 '총' 위치에 맞춰 들여쓰기 */
+  display: inline;
 }
 
-/* 모바일에서 총 비용 표시 */
+/* 모바일에서는 두 줄로 */
 @media (max-width: 768px) {
   .total-cost .main-line {
     display: block;
@@ -159,10 +110,10 @@ input[type="number"]:focus {
     display: block;
     font-size: 16px;
     color: #ddd;
-    margin-left: 2em; /* 모바일에서도 '총' 위치 기준 들여쓰기 */
   }
 }
 
+</style>
 </head>
 <body>
   <h1>베트남 골프 투어 일정 (2026년 12월 8일 ~ 12월 12일)</h1>
@@ -298,39 +249,33 @@ input[type="number"]:focus {
 <p class="notice">※ 식사, 마사지, 캐디팁, 기타 경비 등 추가 시 총 비용 산출</p>
 
 <!-- 입력 박스 -->
-<div class="input-box" style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
-  항목&nbsp;
-  <input type="text" id="item" placeholder="입력"
-         style="width:70px;height:30px;padding:4px;text-align:center;">
-  &nbsp;&nbsp;&nbsp;
-  회수&nbsp;
-  <input type="number" id="count" placeholder="입력"
-         style="width:70px;height:30px;padding:4px;text-align:center;">
-  &nbsp;&nbsp;&nbsp;
-  단가&nbsp;
-  <input type="number" id="price" placeholder="입력"
-         style="width:70px;height:30px;padding:4px;text-align:center;">
-  &nbsp;&nbsp;&nbsp;
+<div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
+  항목&nbsp;<input type="text" id="item" placeholder="입력" 
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+  회수&nbsp;<input type="number" id="count" placeholder="입력" 
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;회&nbsp;&nbsp;&nbsp;
+  단가&nbsp;<input type="number" id="price" placeholder="입력" 
+        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;원&nbsp;&nbsp;&nbsp;
   <button onclick="addItem()" 
-          style="height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
+          style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
     추가
   </button>
-  &nbsp;&nbsp;
-  <button onclick="resetExtra()" 
-          style="height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;">
+<button onclick="resetExtra()" 
+        style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
     Reset
-  </button>
+</button>
 </div>
 
-<!-- 추가 비용 -->
+<!-- 추가 비용 블록 (황금색 점은 CSS 스타일로 자동 적용) -->
 <div class="cost">
-  <p id="extraCostTitle" style="color:#FFD700;font-weight:bold;">
-    추가 비용: 0원
-  </p>
+<p id="extraCostTitle" style="color:#FFD700;font-weight:bold;">
+  추가 비용: 0원
+</p>
   <div id="extraList"></div>
 </div>
 
-<!-- 총 비용 (PC/모바일 모두 이 블록만 사용) -->
+
+<!-- 모바일 전용 총 비용 -->
 <div class="total-cost">
   <span class="main-line">💵 총 비용: <span id="grandTotal">1,369,761</span>원</span>
   <span class="sub-line">
