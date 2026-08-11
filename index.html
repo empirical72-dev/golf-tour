@@ -64,15 +64,14 @@ input[type="number"]:focus {
 }
 @media (max-width: 768px) {
   .input-box {
-    flex-direction: column;   /* 모바일에서는 세로 배치 */
+    flex-direction: column;
     align-items: flex-start;
   }
 
-  .input-box input,
-  .input-box button {
-    margin: 6px 0;            /* 위아래 간격 */
-    width: 100%;              /* 화면 너비에 맞춤 */
-    max-width: 250px;         /* 너무 넓지 않게 제한 */
+  .input-box > * {
+    margin: 6px 0;
+    width: 100%;
+    max-width: 250px;
   }
 }
 @media (max-width: 768px) {
@@ -93,6 +92,24 @@ input[type="number"]:focus {
     display: block;
     color: #555;
     font-size: 14px;
+  }
+}
+/* PC에서는 한 줄로 */
+.total-cost .main-line,
+.total-cost .sub-line {
+  display: inline;
+}
+
+/* 모바일에서는 두 줄로 */
+@media (max-width: 768px) {
+  .total-cost .main-line {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .total-cost .sub-line {
+    display: block;
+    font-size: 16px;
+    color: #ddd;
   }
 }
 
