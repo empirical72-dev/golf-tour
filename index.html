@@ -56,12 +56,13 @@ input[type="number"] {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-input[type="text"]:focus,ㄴ
+input[type="text"]:focus,
 input[type="number"]:focus {
   border-color: #FFD700;
   box-shadow: 0 0 4px rgba(255,215,0,0.6);
   outline: none;
 }
+  /* 모바일 입력 버튼 전용 */
 @media (max-width: 768px) {
   .input-box {
     flex-direction: column;
@@ -72,6 +73,14 @@ input[type="number"]:focus {
     margin: 6px 0;
     width: 100%;
     max-width: 250px;
+  }
+}
+  /* 버튼 전용 줄 */
+  .button-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -139,7 +148,7 @@ input[type="number"]:focus {
   이동 거리: 공항 ↔ 호텔 (44km / 53분) 
   <a href="https://www.google.com/maps/dir/Cat+Bi+International+Airport/Royal+Ha+Long+Hotel" 
      target="_blank" 
-     style="text-decoration:none; color:white; font-size:16px;">
+     style="text-decoration:none; color:white; font-size:14px;">
     🚗 이동 경로
   </a>
 </p>
@@ -172,7 +181,7 @@ input[type="number"]:focus {
   이동 거리: 호텔 ↔ FLC 하롱 골프 클럽 (11km / 21분) 
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/FLC+Ha+Long+Golf+Club" 
      target="_blank" 
-     style="text-decoration:none; color:white; font-size:16px;">
+     style="text-decoration:none; color:white; font-size:14px;">
     🚗 이동 경로
   </a>
 </p>
@@ -190,7 +199,7 @@ input[type="number"]:focus {
   이동 거리: 호텔 ↔ 루비 트리 골프 리조트 (55km / 56분) 
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/Ruby+Tree+Golf+Resort" 
      target="_blank" 
-     style="text-decoration:none; color:white; font-size:16px;">
+     style="text-decoration:none; color:white; font-size:14px;">
     🚗 이동 경로
   </a>
 </p>
@@ -208,7 +217,7 @@ input[type="number"]:focus {
   이동 거리: 호텔 ↔ 투안쩌우 골프 리조트 (11km / 16분) 
   <a href="https://www.google.com/maps/dir/Royal+Ha+Long+Hotel/Tuan+Chau+Golf+Resort" 
      target="_blank" 
-     style="text-decoration:none; color:white; font-size:16px;">
+     style="text-decoration:none; color:white; font-size:14px;">
     🚗 이동 경로
   </a>
 </p>
@@ -251,19 +260,21 @@ input[type="number"]:focus {
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
   항목&nbsp;<input type="text" id="item" placeholder="입력" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
   회수&nbsp;<input type="number" id="count" placeholder="입력(회)" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
   단가&nbsp;<input type="number" id="price" placeholder="입력(원)" 
-        style="width:70px;height:23px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+</div>  
+<div style="margin:12px 0 20px 20px; display:flex; justify-content:center;">
   <button onclick="addItem()" 
-          style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
+          style="width:60px;height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
     추가
   </button>
-<button onclick="resetExtra()" 
-        style="height:35px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
+  <button onclick="resetExtra()" 
+          style="width:60px;height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
     Reset
-</button>
+  </button>
 </div>
 
 <!-- 추가 비용 블록 (황금색 점은 CSS 스타일로 자동 적용) -->
