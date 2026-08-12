@@ -90,10 +90,18 @@ input[type="number"]:focus {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 4px; /* 버튼과 입력 박스 간격 */
+    margin-top: 10px; /* 버튼과 입력 박스 간격 */
   }
 }
 
+  /* 총 비용 전용 */
+/* PC에서는 한 줄로 */
+.total-cost .main-line,
+.total-cost .sub-line {
+  display: inline;
+}
+
+/* 모바일에서는 두 줄로 */
 @media (max-width: 768px) {
   .total-cost {
     font-size: 16px;
@@ -104,32 +112,14 @@ input[type="number"]:focus {
 
   .total-cost .main-line {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px; /* 간격 조정 */
     font-weight: bold;
   }
 
   .total-cost .sub-line {
     display: block;
-    color: #555;
-    font-size: 14px;
-  }
-}
-/* PC에서는 한 줄로 */
-.total-cost .main-line,
-.total-cost .sub-line {
-  display: inline;
-}
-
-/* 모바일에서는 두 줄로 */
-@media (max-width: 768px) {
-  .total-cost .main-line {
-    display: block;
-    margin-bottom: 6px;
-  }
-  .total-cost .sub-line {
-    display: block;
-    font-size: 16px;
-    color: #ddd;
+    font-size: 14px;    /* 모바일에서는 조금 작게 */
+    color: #555;        /* 가독성 좋은 색상 */
   }
 }
 
@@ -271,11 +261,11 @@ input[type="number"]:focus {
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
   항목&nbsp;<input type="text" id="item" placeholder="입력" 
-        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;
   회수&nbsp;<input type="number" id="count" placeholder="입력(회)" 
-        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;
   단가&nbsp;<input type="number" id="price" placeholder="입력(원)" 
-        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;
   
 <div class="button-row">
   <button onclick="addItem()" 
@@ -283,7 +273,7 @@ input[type="number"]:focus {
     추가
   </button>
   <button onclick="resetExtra()" 
-          style="width:70px;height:32px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
+          style="width:70px;height:32px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:15px;">
     Reset
   </button>
   </div>
@@ -297,11 +287,11 @@ input[type="number"]:focus {
 </div>
 
 
-<!-- 모바일 전용 총 비용 -->
+<!-- 전용 총 비용 -->
 <div class="total-cost">
-  <span class="main-line">💵 총 비용: <span id="grandTotal">1,369,761</span>원</span>
+  <span class="main-line">💵 총 비용: <span id="grandTotal"></span>원</span>
   <span class="sub-line">
-    기본 비용(<span id="baseTotal">1,369,761</span>원) + 추가 비용(<span id="extraTotal">0</span>원)
+    기본 비용(<span id="baseTotal"></span>원) + 추가 비용(<span id="extraTotal">0</span>원)
   </span>
 </div>
 <script>
