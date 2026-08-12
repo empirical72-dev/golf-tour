@@ -62,6 +62,12 @@ input[type="number"]:focus {
   box-shadow: 0 0 4px rgba(255,215,0,0.6);
   outline: none;
 }
+/* 기본: PC에서는 한 줄 */
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
   /* 모바일 입력 버튼 전용 */
 @media (max-width: 768px) {
   .input-box {
@@ -80,7 +86,7 @@ input[type="number"]:focus {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 }
 @media (max-width: 768px) {
@@ -260,19 +266,19 @@ input[type="number"]:focus {
 <!-- 입력 박스 -->
 <div style="margin:12px 0 20px 20px; display:flex; flex-wrap:wrap; align-items:center;">
   항목&nbsp;<input type="text" id="item" placeholder="입력" 
-        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
   회수&nbsp;<input type="number" id="count" placeholder="입력(회)" 
-        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
   단가&nbsp;<input type="number" id="price" placeholder="입력(원)" 
-        style="width:70px;height:21px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
+        style="width:70px;height:20px;padding:4px;text-align:center;">&nbsp;&nbsp;&nbsp;
 </div>  
-<div style="margin:12px 0 20px 20px; display:flex; justify-content:center;">
+<div style="margin:12px 0 10px 20px; display:flex; justify-content:center;">
   <button onclick="addItem()" 
-          style="width:60px;height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
+          style="width:70px;height:32px;padding:0 14px;font-weight:bold;color:#000;background-color:#FFD700;border:none;border-radius:4px;cursor:pointer;">
     추가
   </button>
   <button onclick="resetExtra()" 
-          style="width:60px;height:30px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
+          style="width:70px;height:32px;padding:0 14px;font-weight:bold;color:#000;background-color:#E0E0E0;border:none;border-radius:4px;cursor:pointer;margin-left:10px;">
     Reset
   </button>
 </div>
