@@ -68,6 +68,12 @@ input[type="number"]:focus {
   flex-wrap: wrap;
   align-items: center;
 }
+
+.button-row {
+  display: inline-flex; /* PC에서는 같은 줄에 붙음 */
+  margin-left: 10px;    /* 입력 박스와 버튼 사이 간격 */
+}
+
   /* 모바일 입력 버튼 전용 */
 @media (max-width: 768px) {
   .input-box {
@@ -75,20 +81,20 @@ input[type="number"]:focus {
     align-items: flex-start;
   }
 
-  .input-box > * {
+  .input-box > input {   /* input만 margin 적용 */
     margin: 6px 0;
     width: 100%;
     max-width: 250px;
   }
 
-  /* 버튼 전용 줄 */
   .button-row {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 4px;
+    margin-top: 4px; /* 버튼과 입력 박스 간격 */
   }
 }
+
 @media (max-width: 768px) {
   .total-cost {
     font-size: 16px;
