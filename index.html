@@ -292,11 +292,8 @@ function addItem() {
     extraTotal += total;
 
     let baseTotal = getBaseTotal();
-    document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
-    document.getElementById("extraTotal").textContent = extraTotal.toLocaleString();
+    // ❌ 잘못된 부분 수정
     document.getElementById("grandTotal").textContent = (baseTotal + extraTotal).toLocaleString();
-
-    // 추가 비용 라인 갱신 (황금색 점은 CSS에서 자동 적용)
     document.getElementById("extraCostTitle").textContent = "추가 비용 : " + extraTotal.toLocaleString() + "원";
   }
 
@@ -307,9 +304,10 @@ function addItem() {
 
 window.onload = function() {
   let baseTotal = getBaseTotal();
-  document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
+  // ❌ 잘못된 부분 수정
   document.getElementById("grandTotal").textContent = baseTotal.toLocaleString();
 }
+
 function resetExtra() {
   // 항목 리스트 비우기
   document.getElementById("extraList").innerHTML = "";
@@ -318,8 +316,7 @@ function resetExtra() {
   extraTotal = 0;
 
   let baseTotal = getBaseTotal();
-  document.getElementById("baseTotal").textContent = baseTotal.toLocaleString();
-  document.getElementById("extraTotal").textContent = "0";
+  // ❌ 잘못된 부분 수정
   document.getElementById("grandTotal").textContent = baseTotal.toLocaleString();
   document.getElementById("extraCostTitle").textContent = "추가 비용 : 0원";
 
@@ -328,7 +325,6 @@ function resetExtra() {
   document.getElementById("count").value = "";
   document.getElementById("price").value = "";
 }
-
 </script>
 
 </body>
