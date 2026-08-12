@@ -219,7 +219,7 @@ input[type="number"]:focus {
   <p>항공권 : 550,500원</p>
   <p>숙소 : 256,031원 (4박)</p>
   <p>그린피 : 463,722원 (라운딩 3회)</p>
-  <p>차량 : 99,508원 (픽업/샌딩)</p>
+  <p>차량 : 99,508원 (픽업/샌딩/골프장)</p>
 </div>
 
 <!-- 안내 문구 (notice 클래스 적용) -->
@@ -322,6 +322,11 @@ function resetExtra() {
   document.getElementById("extraTotal").textContent = "0";
   document.getElementById("grandTotal").textContent = baseTotal.toLocaleString();
   document.getElementById("extraCostTitle").textContent = "추가 비용 : 0원";
+
+  // ✅ 입력 박스 초기화
+  document.getElementById("item").value = "";
+  document.getElementById("count").value = "";
+  document.getElementById("price").value = "";
 }
 
 </script>
